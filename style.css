@@ -164,3 +164,9 @@ input[type='number'] {
 .transactions li:hover .delete-btn {
   opacity: 1;
 }
+
+@media (max-width: 375px) {
+  .container{
+    width: 320px;
+  }
+}
