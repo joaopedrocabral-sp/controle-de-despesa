@@ -23,11 +23,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 80%;
   height: 100%;
 }
 .message{
-  min-width: 280px;
+  min-width: 250px;
   max-width: 400px;
   padding: 19px 60px;
   position: fixed;
@@ -55,8 +55,8 @@ body {
   background-color: #0f013f;
   border-radius: 10px;
   -webkit-box-shadow: 0px 0px 15px 0px rgb(43, 43, 43);
--moz-box-shadow: 0px 0px 15px 0px rgb(43, 43, 43);
-box-shadow: 0px 0px 15px 0px rgb(43, 43, 43);
+  -moz-box-shadow: 0px 0px 15px 0px rgb(43, 43, 43);
+  box-shadow: 0px 0px 15px 0px rgb(43, 43, 43);
 }
 
 h1 {
