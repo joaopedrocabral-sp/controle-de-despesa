@@ -6,7 +6,7 @@ const balanceDisplay = document.querySelector("#balance")
 const form = document.querySelector("#form")
 const inputTransactionName = document.querySelector("#text")
 const inputTransactionAmount = document.querySelector("#amount")
-
+const alertMessage = document.querySelector("#alert")
 
 const localStorageTransactions = JSON.parse(localStorage
     .getItem("transactions")) 
@@ -91,7 +91,14 @@ const handleFormSubmit = event => {
     const isSomeInputEmpty = transactionName === "" || transactionAmount === ""
   
     if (isSomeInputEmpty) {
-      alert("Por favor preencha tanto o nome quanto o valor da transação")
+      const message = document.createElement("div");
+      message.classList.add("message");
+      message.innerText = "Por favor, escreva tanto o valor quanto o nome da transação!";
+      alertMessage.appendChild(message)
+
+      setTimeout(() =>{
+        message.style.display = "none"
+    }, 3000);
       return;
     }
 
