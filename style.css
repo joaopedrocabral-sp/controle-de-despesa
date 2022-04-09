@@ -84,7 +84,7 @@ h4 {
 .inc-exp-container {
   background-color: #fff;
   box-shadow: var(--box-shadow);
-  padding: 20px;
+  padding: 10px;
   display: flex;
   justify-content: space-around;
   margin: 20px 0;
