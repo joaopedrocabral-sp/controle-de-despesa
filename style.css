@@ -49,7 +49,6 @@ body {
 }
 
 .container {
-  margin: 30px auto;
   padding: 30px;
   width: 350px;
   background-color: #0f013f;
@@ -237,5 +236,10 @@ select{
 @media (max-width: 375px) {
   .container{
     width: 320px;
+  }
+}
+@media (max-width: 450px){
+  body{
+    justify-content: flex-start;
   }
 }
