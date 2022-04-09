@@ -56,8 +56,8 @@ const updateBalanceValues = () => {
     const transactionsAmounts = transactions.map(({amount}) => amount)
 
     const total = parseFloat(getTotal(transactionsAmounts)).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
-    const incomes = parseFloat(getIncomes(transactionsAmounts)).toLocaleString('pt-br') 
-    const expenses = parseFloat(getExpenses(transactionsAmounts)).toLocaleString('pt-br')
+    const incomes = parseFloat(getIncomes(transactionsAmounts)).toLocaleString('pt-br', {minimumFractionDigits: 2}) 
+    const expenses = parseFloat(getExpenses(transactionsAmounts)).toLocaleString('pt-br', {minimumFractionDigits: 2})
     
         balanceDisplay.textContent = `${total}`
         incomeDisplay.textContent = `${incomes}`
