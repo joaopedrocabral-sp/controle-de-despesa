@@ -87,14 +87,19 @@ h4 {
   box-shadow: var(--box-shadow);
   padding: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 20px 0;
   border-radius: 10px;
+  max-width: 290px;
 }
 
 .inc-exp-container > div {
   flex: 1;
   text-align: center;
+}
+
+.inc-exp-container p{
+ margin: 2px;
 }
 
 .inc-exp-container h4 {

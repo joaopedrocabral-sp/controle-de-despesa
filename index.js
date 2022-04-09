@@ -27,10 +27,12 @@ const addTransactionIntoDOM = ({amount, name, id}) => {
     const operator = amount < 0 ? "-" : "+"
     const CSSClass = amount < 0 ? "minus" : "plus"
     const amountWithoutOperator = Math.abs(amount).toFixed(2)
+    const amountNumber = parseFloat(amountWithoutOperator)
+    const amountReal = amountNumber.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
     const li = document.createElement("li")
     li.classList.add(CSSClass)
     li.innerHTML = `
-        ${name} <span> ${operator} R$ ${amountWithoutOperator} </span>
+        ${name} <span> ${operator} ${amountReal} </span>
         <button class="delete-btn" onClick="removeTransaction(${id})">x</button>
     `
     transactionsUl.prepend(li)
@@ -52,10 +54,14 @@ const getTotal = transactionsAmounts => transactionsAmounts
 
 const updateBalanceValues = () => {
     const transactionsAmounts = transactions.map(({amount}) => amount)
+
+    const total = parseFloat(getTotal(transactionsAmounts)).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+    const incomes = parseFloat(getIncomes(transactionsAmounts)).toLocaleString('pt-br') 
+    const expenses = parseFloat(getExpenses(transactionsAmounts)).toLocaleString('pt-br')
     
-        balanceDisplay.textContent = `R$ ${getTotal(transactionsAmounts)}`
-        incomeDisplay.textContent = `R$ ${getIncomes(transactionsAmounts)}`
-        expenseDisplay.textContent = `R$ ${getExpenses(transactionsAmounts)}`
+        balanceDisplay.textContent = `${total}`
+        incomeDisplay.textContent = `${incomes}`
+        expenseDisplay.textContent = `${expenses}`
 }
 
 const init = () => {
